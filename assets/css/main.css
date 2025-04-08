@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --color-primary-100: #540D6E;
+  --color-secondary-100: #EE4266;
+  --color-accent-100: #FFD23F;
+
+  --container-width: 1200px;
+}
