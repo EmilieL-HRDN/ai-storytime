@@ -85,8 +85,10 @@ const validate = (state: any): FormError[] => {
 };
 
 const router = useRouter();
+const toast = useToast()
 
 function submit(event: FormSubmitEvent<typeof state>) {
+  toast.add({ title: 'Patience....', description: 'Votre histoire arrive', color: 'success' })
   router.push({
     path: "/story",
     query: {

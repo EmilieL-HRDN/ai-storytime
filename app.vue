@@ -1,13 +1,15 @@
 <template>
-  <div
-    :style="backgroundStyles"
-    class="flex flex-col justify-center items-center"
-  >
-    <NuxtLoadingIndicator />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <UApp>
+    <div
+      :style="backgroundStyles"
+      class="flex flex-col justify-center items-center"
+    >
+      <NuxtLoadingIndicator />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </div>
+  </UApp>
 </template>
 <script setup>
 import { formats } from "openai/internal/qs/index.mjs";
