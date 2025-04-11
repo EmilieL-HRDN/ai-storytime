@@ -3,13 +3,14 @@
     :style="backgroundStyles"
     class="flex flex-col justify-center items-center"
   >
+    <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
   </div>
 </template>
 <script setup>
-import { formats } from 'openai/internal/qs/index.mjs';
+import { formats } from "openai/internal/qs/index.mjs";
 
 const img = useImage();
 
@@ -21,7 +22,7 @@ const backgroundStyles = computed((à) => {
     backgroundPosition: "center",
     height: "100vh",
     width: "100vw",
-    format: 'web'
+    format: "web",
   };
 });
 </script>
