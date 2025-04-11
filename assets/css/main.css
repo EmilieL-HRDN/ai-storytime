@@ -2,9 +2,16 @@
 @import "@nuxt/ui";
 
 @theme {
-  --color-primary-100: #540D6E;
-  --color-secondary-100: #EE4266;
-  --color-accent-100: #FFD23F;
+  --color-primary-100: #0D1D36;
+  --color-secondary-100: #4F1787;
+  --color-accent-100: #EB3678;
 
   --container-width: 1200px;
+}
+
+:root {
+  --ui-primary: var(--color-primary-100);
+  --ui-secondary: var(--color-secondary-100);
+  --ui-accent: var(--color-accent-100);
+  --ui-error:var(--color-accent-100);
 }

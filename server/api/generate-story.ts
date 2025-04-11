@@ -6,14 +6,15 @@ export default defineEventHandler(async (event) => {
 
   const openai = new OpenAI({ apiKey: config.openaiApiKey })
 
-  const prompt = `Crée une courte histoire pour enfants entre 100 et 200 mots.
-Le personnage s'appelle ${body.character}, l'histoire se passe dans ${body.place}, et un objet magique appelé ${body.object} joue un rôle important.
+  const prompt = 
+  `Agis en tant qu'autrice d'une littérature pour enfant inclusive et féministe, engagé notamment pour les filles puissent être indépendantes, fortes ou intrépides et les garçons sensibles et doux. Ne mets pas en avant la gentillesse de l'héroine, ou ses attributs physiques. Crée une courte histoire pour enfants entre 100 et 200 mots.
+Le personnage principal s'appelle ${body.character}, c'est un ou une ${body.gender}, l'histoire se passe là: ${body.place}.
 Utilise un ton amusant, bienveillant et adapté aux enfants de 5 à 8 ans.`
 
-  const completion = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: prompt }],
-  })
+  const response = await openai.responses.create({
+    model: "gpt-4o-mini",
+    input: prompt,
+});
 
-  return { story: completion.choices[0].message.content }
+  return { story: response.output_text }
 })
